@@ -26,16 +26,6 @@ ocrResult = pytesseract.image_to_string(rgb_image, lang=usingLang[0]+"+"+usingLa
 print('\n'+usingLang[0],usingLang[1],"언어를 이미지에서 추출한 결과입니다.")
 print('------------------추출 결과---------------------\n')
 print(ocrResult.replace('\n',''))
-
-for i in range(0,2):
-    if(usingLang[i]=='kor'):
-        usingLang[i]='ko'
-    elif(usingLang[i]=='eng'):
-        usingLang[i]='en'
-    elif(usingLang[i]=='jpn'):
-        usingLang[i]='ja'
-
 print('\n------------------번역 결과---------------------\n')
-
 print(translator.translate(ocrResult.replace('\n',''),src=translator.detect(ocrResult).lang,dest='ko').text)#(번역할 str, 번역할 str의 언어, 번역할 언어).번역 결과만
 print('\n--------------------------------------------')
