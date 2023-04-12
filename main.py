@@ -27,5 +27,6 @@ print('\n'+usingLang[0],usingLang[1],"언어를 이미지에서 추출한 결과
 print('------------------추출 결과---------------------\n')
 print(ocrResult.replace('\n',''))
 print('\n------------------번역 결과---------------------\n')
-print(translator.translate(ocrResult.replace('\n',''),src=translator.detect(ocrResult).lang,dest='ko').text)#(번역할 str, 번역할 str의 언어, 번역할 언어).번역 결과만
+#print(translator.detect(ocrResult).lang)
+print(translator.translate(ocrResult.replace('\n',''),src='auto',dest='ko').text)#(번역할 str, 번역할 str의 언어, 번역할 언어).번역 결과만
 print('\n--------------------------------------------')
